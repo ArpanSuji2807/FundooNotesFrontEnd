@@ -1,0 +1,36 @@
+.takenote{
+    height: 90vh;
+    width: 99.8vw;
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+.takenote1{
+    margin-top: 2%;
+    width: 45vw;
+    height: 6vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+}
+.note1{
+    margin-left: 2%;
+    width: 70%;
+    height: 92%;
+    border: none;
+    outline: none;
+}
+.takenoteIcon{
+    width: 30%;
+    height: 92%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.newnote{
+    width: 9%;
+    height: 52%;
+}

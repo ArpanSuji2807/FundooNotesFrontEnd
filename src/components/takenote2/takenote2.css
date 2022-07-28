@@ -1,0 +1,79 @@
+.takenote2{
+    width: 99.8vw;
+    height: 20vh;
+    border: 1px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.takenote2a{
+    margin-top: 2%;
+    margin-right: 0.7%;
+    width: 45vw;
+    height: 14vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 5px 5px 5px 5px;
+}
+.note2a{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    margin-top: 1%;
+    margin-left: 2%;
+    height: 100%;
+    width: 92%;
+    border: none;
+    outline: none;
+}
+.Pin{
+    margin-right: 2%;
+    width: 4%;
+    height: 55%;
+}
+.note2b{
+    margin-left: 2%;
+    width: 95%;
+    height: 35%;
+}
+.takenote{
+    height: 100%;
+    width: 99%;
+    border: none;
+    outline: none;
+}
+.note2c{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+}
+.noteIcons{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icons{
+    width: 5%;
+    height: 50%;
+}
+.close{
+    width: 15%;
+    height: 100%;
+    margin-left: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.closebutton{
+    border: none;
+    outline: none;
+}

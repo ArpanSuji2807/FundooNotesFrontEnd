@@ -1,0 +1,87 @@
+.mainbox1{
+    width: 99.8vw;
+    height: 99.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainbox2{
+    width: 30%;
+    height: 75%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainbox2a{
+    margin-top: 10%;
+    width: 30%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.img1{
+    font-size: x-large;
+}
+.mainbox2b{
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+    width: 30%;
+    height: 8%;
+    font-size: x-large;
+}
+.mainbox2c{
+    margin-bottom: 4%;
+    width: 70%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.mainbox2d{
+    width: 78%;
+    height: 8%;
+}
+.box2d{
+    width: 100%;
+    height: 100%;
+}
+.mainbox2e{
+    margin-bottom: 6%;
+    width: 30%;
+    height: 3%;
+    margin-top: 3%;
+    margin-right: 48%;
+    display: flex;
+    align-items: center;
+}
+.mainbox2f{
+    width: 82%;
+    height: 3%;
+    display: flex;
+    align-items: center;
+    font-size: 87%;
+    margin-bottom: 0.5%;
+    margin-left: 3%;
+}
+.mainbox2g{
+    width: 30%;
+    height: 3%;
+    color: blue;
+    display: flex;
+    align-items: center;
+    margin-right: 49%;
+    margin-bottom: 5%;
+}
+.mainbox2h{
+    width: 83%;
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.account{
+    margin-left: 2%;
+}

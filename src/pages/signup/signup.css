@@ -1,0 +1,144 @@
+.SignUpmainbox{
+    width: 99.8vw;
+    height: 99.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+.SignUpmainbox1{
+    width: 50%;
+    height: 85%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.SignUpmainbox2{
+    width: 60%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SignUpmainbox4{
+    width: 85%;
+    height: 80%;
+}
+.mainbox3{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.mainbox3a{
+    width: 75%;
+    height: 55%;
+    margin-right: 10%;
+}
+.box3a1{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box3a2{
+    width: 100%;
+    height: 25%;
+}
+.SignUpmainbox4a{
+    width: 30%;
+    height: 7%;
+    display: flex;
+}
+.img1{
+    font-size: x-large;
+}
+.mainbox4b{
+    margin-top:3%;
+    margin-bottom: 2%;
+    width: 90%;
+    height:7%;
+    display: flex;
+    justify-content: flex-start;
+    font-size:165%;
+}
+.mainbox4c{
+    margin-bottom: 5%;
+    width: 60%;
+    height: 5%;
+    display: flex;
+    justify-content: flex-start;
+}
+.mainbox4d{
+    margin-bottom: 9%;
+    width: 100%;
+    height: 7%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mainbox4da{
+    width: 46%;
+    height: 50%;
+}
+.mainbox4e{
+    margin-top: 1%;
+    width: 100%;
+    height: 7%;
+}
+.mainbox4e1{
+    width: 98%;
+    height: 100%;
+}
+.mainbox4f{
+    margin-top: 7%;
+    margin-bottom: 7%;
+    width: 60%;
+    height: 2%;
+    font-size: x-small;
+    display: flex;
+    align-items: center;
+}
+.mainbox4g{
+    width: 90%;
+    height: 3%;
+    display: flex;
+    font-size: x-small;
+    align-content: center;
+    margin-bottom: 5%;
+}
+.mainbox4h{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10%;
+}
+.mainbox4i{
+    width: 100%;
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button{
+    width: 20%;
+    background-color: blue;
+    color: white;
+}
+.mainbox4x{
+    margin-bottom: 6%;
+    width: 100%;
+    height: 7%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mainbox4xa{
+    width: 46%;
+    height: 100%;
+}

@@ -1,0 +1,66 @@
+.noteBody{
+    width: 99.8vw;
+    height: 60vh;
+    border: 1px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.noteBody1{
+    width: 90%;
+    height: 99.6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1%;
+}
+.firstNotes{
+    width: 18%;
+    height: 28%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.notesTitle{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+.notesTitle1{
+    margin-top: 1%;
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+.notesPin{
+    width: 11%;
+    height: 80%;
+}
+.notesDescription{
+    margin-top: 5%;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+.notesDescription1{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+.notesIcon{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 8%;
+}
+.notesIcon1{
+    width: 6%;
+    height: 75%;
+}
