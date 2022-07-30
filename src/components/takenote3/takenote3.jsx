@@ -8,17 +8,16 @@ import Image from '../assets/image.png'
 import Archive from '../assets/archive.png'
 import More from '../assets/more.png'
 
-const Takenote3 = () =>{
+const Takenote3 = (props) =>{
     return(<div>
         <div className="noteBody">
-            <div className="noteBody1">
                 <div className="firstNotes">
                     <div className="notesTitle">
-                    <input className="notesTitle1" type="text"></input>
+                    <div className="notesTitle1">{props.note.Title}</div>
                     <img src={Pin} alt="Pin" className="notesPin"/>
                     </div>
                     <div className="notesDescription">
-                    <input className="notesDescription1" type="text"></input>
+                    <div className="notesDescription1" >{props.note.Description}</div>
                     </div>
                     <div className="notesIcon">
                         <img src={Reminder} alt="reminder" className="notesIcon1"/>
@@ -29,7 +28,6 @@ const Takenote3 = () =>{
                         <img src={More} alt="reminder" className="notesIcon1"/>                                                
                     </div>
                 </div>
-            </div>
         </div>
     </div>)
 }

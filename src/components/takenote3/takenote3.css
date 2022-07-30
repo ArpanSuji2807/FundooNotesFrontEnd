@@ -1,22 +1,24 @@
 .noteBody{
-    width: 99.8vw;
-    height: 60vh;
+    width: 18vw;
+    height: 18vh;
     border: 1px;
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     justify-content: center;
+    margin-top: 8%;
 }
-.noteBody1{
-    width: 90%;
-    height: 99.6%;
+/* .noteBody1{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1%;
-}
+} */
 .firstNotes{
-    width: 18%;
-    height: 28%;
+    width: 100%;
+    height: 100%;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
