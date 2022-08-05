@@ -1,59 +1,104 @@
 import React, { useState } from "react";
 import './takenote2.css'
 import { CreateNote } from "../../service/dataservice";
-import Pin from '../assets/pin.png'
-import Reminder from '../assets/reminder.png'
-import Collaborator from '../assets/collaboration.png'
-import Background from '../assets/background.png'
-import Image from '../assets/image.png'
-import Archive from '../assets/archive.png'
-import More from '../assets/more.png'
-import Undo from '../assets/undo.png'
-import Redo from '../assets/redo.png'
+import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
+import { Button, IconButton, Toolbar, Tooltip } from "@mui/material";
+import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
+import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
+import ColorPopper from "../colorpopper/colorpopper";
 
-const Takenote2 = () =>{
+const Takenote2 = () => {
 
-    const[noteObj,setNoteObj] = React.useState({Title:'',Description:''})
+    const [noteObj, setNoteObj] = React.useState({ Title: '', Description: '', Color: '', isArchived: false })
 
-    const takeTitle = (event) =>{
-        setNoteObj(prevState =>({...prevState,Title:event.target.value}))
+    const takeTitle = (event) => {
+        setNoteObj(prevState => ({ ...prevState, Title: event.target.value }))
     }
 
-    const takeDescription = (event) =>{
-        setNoteObj(prevState =>({...prevState,Description:event.target.value}))
+    const takeDescription = (event) => {
+        setNoteObj(prevState => ({ ...prevState, Description: event.target.value }))
     }
 
-    const AddNote = () =>{
-        CreateNote(noteObj).then((res) =>{
+    const listenToColorPopper = (colordata) => {
+        setNoteObj(prevState => ({ ...prevState, Color: colordata }))
+    }
+
+    const AddNote = () => {
+        CreateNote(noteObj).then((res) => {
             console.log(res);
-        }).catch((err) =>{
+        }).catch((err) => {
             console.log(err);
         })
     }
 
-    return(<div>
+    const createArchive = () => {
+        setNoteObj(prevState => ({ ...prevState, isArchived: !noteObj.isArchived }))
+    }
+
+    return (<div>
         <div className="takenote2">
-            <div className="takenote2a">
+            <div style={{ backgroundColor: noteObj.Color }} className="takenote2a">
                 <div className="note2a">
-                    <input onChange={takeTitle} className="title" placeholder="Title.."></input>
-                    <img src={Pin} alt="Pin" className="Pin"></img>
+                    <input style={{ backgroundColor: noteObj.Color }} onChange={takeTitle} className="title" placeholder="Title.."></input>
+                    <Tooltip title="Pin note">
+                        <IconButton className="icons">
+                            <PushPinOutlinedIcon />
+                        </IconButton>
+                    </Tooltip>
                 </div>
                 <div className="note2b">
-                <input onChange={takeDescription} className="takenote" placeholder="Take a note..."></input>
+                    <input style={{ backgroundColor: noteObj.Color }} onChange={takeDescription} className="takenote" placeholder="Take a note..."></input>
                 </div>
                 <div className="note2c">
                     <div className="noteIcons">
-                    <img src={Reminder} alt="icons" className="icons"></img>
-                    <img src={Collaborator} alt="icons" className="icons"></img>
-                    <img src={Background} alt="icons" className="icons"></img>
-                    <img src={Image} alt="icons" className="icons"></img>
-                    <img src={Archive} alt="icons" className="icons"></img>
-                    <img src={More} alt="icons" className="icons"></img>
-                    <img src={Undo} alt="icons" className="icons"></img>
-                    <img src={Redo} alt="icons" className="icons"></img>
+                        <Tooltip title="Remind me">
+                            <IconButton className="icons">
+                                <AddAlertOutlinedIcon />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Collaborator">
+                        <IconButton className="icons">
+                            <PersonAddAltOutlinedIcon />
+                        </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Background options">
+                            <IconButton className="icons">
+                            <ColorPopper action='create' listenToColorPopper={listenToColorPopper} />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Add Image">
+                        <IconButton className="icons">
+                            <InsertPhotoOutlinedIcon />
+                        </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Archive">
+                        <IconButton className="icons">
+                            <ArchiveOutlinedIcon onClick={createArchive} />
+                        </IconButton>
+                        </Tooltip>
+                        <Tooltip title="More">
+                        <IconButton className="icons">
+                            <MoreVertOutlinedIcon />
+                        </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Undo">
+                        <IconButton className="icons">
+                            <UndoOutlinedIcon />
+                        </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Redo">
+                        <IconButton className="icons">
+                            <RedoOutlinedIcon />
+                        </IconButton> 
+                        </Tooltip>
                     </div>
                     <div className="close">
-                        <button onClick={AddNote} className="closebutton">Close</button>
+                        <Button onClick={AddNote} size="small" className="closebutton">Close</Button>
                     </div>
                 </div>
             </div>

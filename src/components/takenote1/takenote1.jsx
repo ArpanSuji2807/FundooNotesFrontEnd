@@ -1,26 +1,39 @@
 import React from "react";
 import './takenote1.css'
-import NewNote from '../assets/newlist.png'
-import Draw from '../assets/notedraw.png'
-import Image from '../assets/image.png'
+import { IconButton, Tooltip } from "@mui/material";
+import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 
 const Takenote1 = (props) => {
 
-    const switchToNote2 = () =>{
+    const switchToNote2 = () => {
         props.listenToHeader()
     }
     return (<div>
-        <div onClick={switchToNote2} className="takenote">
-            <div className="takenote1">
+        <div className="takenote">
+            <div onClick={switchToNote2} className="takenote1">
                 <input placeholder="Take note" className="note1"></input>
                 <div className="takenoteIcon">
-                    <img src={NewNote} alt="new note" className="newnote"></img>
-                    <img src={Draw} alt="new note" className="newnote"></img>
-                    <img src={Image} alt="new note" className="newnote"></img>
+                    <Tooltip title="New List">
+                        <IconButton className="icons">
+                            <CheckBoxOutlinedIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="New note with drawing">
+                    <IconButton className="icons">
+                        <BrushOutlinedIcon />
+                    </IconButton>
+                    </Tooltip>
+                    <Tooltip title="New note with image">
+                    <IconButton className="icons">
+                        <ImageOutlinedIcon />
+                    </IconButton>
+                    </Tooltip>
                 </div>
             </div>
         </div>
-        </div>)
+    </div>)
 }
 
 export default Takenote1;

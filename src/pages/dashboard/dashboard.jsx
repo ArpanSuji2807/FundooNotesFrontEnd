@@ -5,12 +5,13 @@ import Takenote2 from '../../components/takenote2/takenote2'
 import Takenote3 from '../../components/takenote3/takenote3'
 import { GetAllNotes } from '../../service/dataservice'
 import './dashboard.css'
+import SideDrawer from '../../components/drawer/drawer'
 
 function Dashboard() {
 
   const[switchNote,setSwitchNote] = useState(false)
   const[notesArray,setNotesArray] = useState([])
-
+  const[sideView,setSideView] = useState(false)
   const listenToHeader = () =>{
     setSwitchNote(true)
   }
@@ -24,13 +25,18 @@ function Dashboard() {
     })
   }
 
+  const listenToHeaderMenu =() =>{
+    setSideView(!sideView)
+  }
+
 
   React.useEffect(() =>{
     GetNotes()
   },[])
   return (
     <div>
-        <Header/>
+        <Header listenToHeaderMenu ={listenToHeaderMenu}/>
+        <SideDrawer sideView = {sideView}/>
         {switchNote?<Takenote2/>:<Takenote1 listenToHeader={listenToHeader}/>}
         <div className='notes3body'>
         {

@@ -17,3 +17,19 @@ export const GetAllNotes = () =>{
   let response = axios.get('http://localhost:3001/api/v1/userNotes',configObj)
   return response;
 }
+
+export const UpdateColorNotes = (colorObj,_id) =>{
+  console.log(colorObj);
+  let response = axios.put(`http://localhost:3001/api/v1/userNotes/${_id}`,colorObj,configObj)
+  return response;
+}
+
+export const ArchiveNotes = (_id) =>{
+  let response = axios.put(`http://localhost:3001/api/v1/userNotes/${_id}/isArchive`,null,configObj)
+  return response;
+}
+
+export const UpdateNotes = (Obj,_id) =>{
+  let response = axios.put(`http://localhost:3001/api/v1/userNotes/${_id}`,Obj,configObj)
+  return response;
+}

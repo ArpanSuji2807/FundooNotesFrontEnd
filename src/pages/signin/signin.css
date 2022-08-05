@@ -84,4 +84,38 @@
 }
 .account{
     margin-left: 2%;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .mainbox1{
+        width: 99.8vw;
+        height: 99.7vh;
+    }
+    .mainbox2{
+        width: 100%;
+        height: 100%;
+    }
+    .mainbox2e{
+        width: 35%;
+    }
+    .mainbox2f{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 860px) {
+    .mainbox2{
+        height: 55%;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 861px) and (max-width: 1024px) {
+    .mainbox2{
+        height: 55%;
+        width: 70%;
+    }
 }

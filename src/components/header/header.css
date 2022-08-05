@@ -19,15 +19,31 @@
     height: 36%;
 }
 .header2{
-    width: 60%;
-    height: 82%;
+    width: 45%;
+    height: 70%;
     display: flex;
     align-items: center;
+    margin-left: 5%;
+    margin-right: 12%;
+    background: #f1f3f4;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px 0 rgba(65,69,73,.3),0 1px 3px 1px rgba(65,69,73,.15);
+
 }
 .Search{
-    margin-left: 12%;
-    width: 80%;
-    height: 70%;
+    margin-left: 0;
+    margin-right: 0;
+    height: 44px;
+    border-radius: 8px;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    max-width: 720px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#Searchbar{
+    margin: 0 4px;
 }
 .header3{
     margin-left: 3%;
@@ -52,4 +68,99 @@
 .logo1{
     width: 20%;
     height: 48%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .header2{
+        display: none;
+    }
+    .header1{
+        margin-left: 5%;
+    }
+    .header{
+        justify-content:space-around;
+    }
+    .menu{
+        width: 35%;
+        height: 30%;
+    }
+    .logo{
+        width: 35%;
+        height: 30%;
+        margin: 10%;
+    }
+    .header3{
+        width: 15%;
+        margin-left: 25%;
+    }
+    .logo1{
+        width: 45%;
+        height: 30%;
+        margin: 7%;
+    }
+    .header4{
+        width: 13%;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 860px) {
+    .header{
+        justify-content: space-around;
+    }
+    .header2{
+        width: 40%;
+    }
+    .header1{
+        justify-content:space-between;
+    }
+    .menu{
+        width: 30%;
+        height: 30%;
+    }
+    .keep{
+        margin-right: 5%;
+        margin-left:5%;
+    }
+    .logo{
+        width: 30%;
+        height: 30%;
+        margin: 8%;
+    }
+    .logo1{
+        width: 30%;
+        height: 30%;
+        margin: 8%;
+    }
+}
+
+@media screen and (min-width: 861px) and (max-width: 1024px) {
+    .header{
+        justify-content: space-around;
+    }
+    .menu{
+        width: 30%;
+        height: 30%;
+        margin-left: 6%;
+    }
+    .keep{
+        margin-right: 5%;
+        margin-left:5%;
+    }
+    .header1{
+        justify-content:space-between;
+    }
+    .header2{
+        height: 65%;
+    }
+    .logo{
+        width: 30%;
+        height: 30%;
+        margin: 10%;
+    }
+    .logo1{
+        width: 30%;
+        height: 30%;
+        margin: 10%;
+    }
 }

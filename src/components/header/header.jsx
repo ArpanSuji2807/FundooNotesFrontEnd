@@ -1,33 +1,51 @@
 import React from "react";
 import './header.css';
-import Menu from '../assets/menu.png';
+import { IconButton, InputBase } from "@mui/material";
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import SearchIcon from '@mui/icons-material/Search';
 import Keep from '../assets/keep.png';
-import Refresh from '../assets/refresh.png';
-import List from '../assets/list.png';
-import Settings from '../assets/settings.png'
-import User from '../assets/usericon.png';
-import Grid from '../assets/grid.png';
+import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
+import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div>
             <div className="header">
                 <div className="header1">
-                    <img src={Menu} alt="menu icon" className="menu" />
+                    <IconButton>
+                    <MenuOutlinedIcon onClick ={props.listenToHeaderMenu} className="menu" />
+                    </IconButton>
                     <img src={Keep} alt="keep logo" className="keep" />
-                    <h2>Keep</h2>
+                    <h2>Fundoo</h2>
                 </div>
-                <div className="header2">
-                    <input className="Search" placeholder="Search"></input>
+                <div className="header2"> 
+                <IconButton id='Searchbar' aria-label="search" size="large">
+                            <SearchIcon />
+                        </IconButton>              
+                    <InputBase className="Search" id ="Search" placeholder="Search"/>                        
+                    
                 </div>
                 <div className="header3">
-                    <img src={Refresh} alt="refresh logo" className="logo" />
-                    <img src={List} alt="List logo" className="logo" />
-                    <img src={Settings} alt="List logo" className="logo" />
-                </div>
+                <IconButton>
+                    <RefreshOutlinedIcon className="logo" />
+                    </IconButton>                    
+                    <IconButton>
+                    <ViewStreamOutlinedIcon className="logo" />
+                    </IconButton>                     
+                    <IconButton>
+                    <SettingsOutlinedIcon className="logo" />
+                    </IconButton>                 
+                    </div>
                 <div className="header4">
-                <img src={Grid} alt="grid logo" className="logo1" />
-                    <img src={User} alt="user logo" className="logo1" />
+                <IconButton>
+                    <AppsOutlinedIcon className="logo" />
+                    </IconButton>
+                    <IconButton>
+                    <AccountCircleOutlinedIcon className="logo" />
+                    </IconButton>
                 </div>
             </div>
         </div>
