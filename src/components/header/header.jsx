@@ -23,7 +23,7 @@ const Header = (props) => {
                 </div>
                 <div className="header2"> 
                 <IconButton id='Searchbar' aria-label="search" size="large">
-                            <SearchIcon />
+                            <SearchIcon className="IconSearch" />
                         </IconButton>              
                     <InputBase className="Search" id ="Search" placeholder="Search"/>                        
                     
@@ -32,8 +32,11 @@ const Header = (props) => {
                 <IconButton>
                     <RefreshOutlinedIcon className="logo" />
                     </IconButton>                    
-                    <IconButton>
-                    <ViewStreamOutlinedIcon className="logo" />
+                    <IconButton >
+                        <div className="logolist" >
+                        <ViewStreamOutlinedIcon  />
+
+                        </div>
                     </IconButton>                     
                     <IconButton>
                     <SettingsOutlinedIcon className="logo" />

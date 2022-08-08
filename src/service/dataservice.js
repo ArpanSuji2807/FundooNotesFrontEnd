@@ -29,6 +29,11 @@ export const ArchiveNotes = (_id) =>{
   return response;
 }
 
+export const TrashNotes = (_id) =>{
+  let response = axios.put(`http://localhost:3001/api/v1/userNotes/${_id}/isDelete`,null,configObj)
+  return response;
+}
+
 export const UpdateNotes = (Obj,_id) =>{
   let response = axios.put(`http://localhost:3001/api/v1/userNotes/${_id}`,Obj,configObj)
   return response;

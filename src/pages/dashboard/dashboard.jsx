@@ -12,13 +12,32 @@ function Dashboard() {
   const[switchNote,setSwitchNote] = useState(false)
   const[notesArray,setNotesArray] = useState([])
   const[sideView,setSideView] = useState(false)
+  const[notes,setNotes] = useState('Notes')
   const listenToHeader = () =>{
     setSwitchNote(true)
   }
 
   const GetNotes = () =>{
     GetAllNotes().then((res) =>{
-      setNotesArray(res.data.data)
+      let filterArray = res.data.data.filter((noteData) =>{
+          if(notes == 'Notes'){
+            if(noteData.isArchived == false && noteData.isDeleted == false){
+              return noteData;
+            }
+          }
+          if(notes == 'Archive'){
+            if(noteData.isArchived == true && noteData.isDeleted == false){
+              return noteData;
+          }
+        }
+        if(notes == 'Trash'){
+          if(noteData.isArchived == false && noteData.isDeleted == true){
+            return noteData;
+        }
+      }
+      })
+      console.log(filterArray);
+      setNotesArray(filterArray)
       console.log(res);
     }).catch((err) =>{
       console.log(err);
@@ -29,18 +48,24 @@ function Dashboard() {
     setSideView(!sideView)
   }
 
+  const listenToDrawer = (data) =>{
+    console.log(data);
+    setNotes(data)
+    // GetNotes();
+  }
+
 
   React.useEffect(() =>{
     GetNotes()
-  },[])
+  },[notes])
   return (
     <div>
         <Header listenToHeaderMenu ={listenToHeaderMenu}/>
-        <SideDrawer sideView = {sideView}/>
-        {switchNote?<Takenote2/>:<Takenote1 listenToHeader={listenToHeader}/>}
+        <SideDrawer listenToDrawer = {listenToDrawer} sideView = {sideView}/>
+        {switchNote?<Takenote2 GetNote = {GetNotes}/>:<Takenote1 listenToHeader={listenToHeader}/>}
         <div className='notes3body'>
         {
-          notesArray.map((note) => <Takenote3 note = {note}/>)
+          notesArray.map((note) => <Takenote3 GetNote = {GetNotes} note = {note}/>)
         }
         </div>     
     </div>

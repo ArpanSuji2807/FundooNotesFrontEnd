@@ -12,7 +12,7 @@ import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import ColorPopper from "../colorpopper/colorpopper";
 
-const Takenote2 = () => {
+const Takenote2 = (props) => {
 
     const [noteObj, setNoteObj] = React.useState({ Title: '', Description: '', Color: '', isArchived: false })
 
@@ -31,6 +31,7 @@ const Takenote2 = () => {
     const AddNote = () => {
         CreateNote(noteObj).then((res) => {
             console.log(res);
+            props.GetNote();
         }).catch((err) => {
             console.log(err);
         })

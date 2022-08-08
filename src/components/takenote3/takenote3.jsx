@@ -11,9 +11,10 @@ import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import ColorPopper from "../colorpopper/colorpopper";
-import { ArchiveNotes, UpdateColorNotes, UpdateNotes } from "../../service/dataservice";
+import { ArchiveNotes, TrashNotes, UpdateColorNotes, UpdateNotes } from "../../service/dataservice";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TextareaAutosize } from '@mui/material';
@@ -50,6 +51,7 @@ const Takenote3 = (props) => {
     const noteUpdate = () => {
         UpdateNotes(note, note._id).then((res) => {
             console.log(res);
+            props.GetNote()
         }).catch((error) => {
             console.log(error);
         })
@@ -64,6 +66,7 @@ const Takenote3 = (props) => {
         }
         UpdateColorNotes(data, props.note._id).then((res) => {
             console.log(res)
+            props.GetNote()
         }).catch((err) => {
             console.log(err);
         })
@@ -72,10 +75,20 @@ const Takenote3 = (props) => {
     const takeArchive = () => {
         ArchiveNotes(props.note._id).then((res) => {
             console.log(res);
+            props.GetNote()
         }).catch((err) => {
             console.log(err);
         })
     }
+
+    const takeTrash = () => {
+        TrashNotes(props.note._id).then((res) => {
+            console.log(res);
+            props.GetNote()
+        }).catch((err) => {
+            console.log(err);
+        })
+    } 
     return (<div>
         <div className="noteBody">
             <div style={{ backgroundColor: props.note.Color }} className="firstNotes">
@@ -121,9 +134,9 @@ const Takenote3 = (props) => {
                             <ArchiveOutlinedIcon onClick={takeArchive} />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="More">
+                    <Tooltip title="Delete">
                         <IconButton className="icons">
-                            <MoreVertOutlinedIcon />
+                            <DeleteOutlineOutlinedIcon onClick = {takeTrash} />
                         </IconButton>
                     </Tooltip>
                 </div>

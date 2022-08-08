@@ -94,8 +94,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function SideDrawer(props) {
 
-
-
   const theme = useTheme();
   const [open, setOpen] = React.useState(props.sideView);
 
@@ -111,6 +109,18 @@ export default function SideDrawer(props) {
     setOpen(false);
   };
 
+  const takeArchiveNotes = () =>{
+    props.listenToDrawer('Archive')
+  }
+
+  const takeTrashNotes = () =>{
+    props.listenToDrawer('Trash')
+  }
+
+  const takeAllNotes = () =>{
+    props.listenToDrawer('Notes')
+  }
+
   return (
     // <Box sx={{ display: 'flex',marginTop:10 }}>
     //   <CssBaseline />
@@ -120,7 +130,7 @@ export default function SideDrawer(props) {
         
         <List>
           
-            <ListItem disablePadding sx={{ display: 'block' }}>
+            <ListItem onClick={takeAllNotes} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -180,7 +190,7 @@ export default function SideDrawer(props) {
                 <ListItemText primary={'Edit Labels'} sx={{ opacity: props.sideView ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-            <ListItem  disablePadding sx={{ display: 'block' }}>
+            <ListItem onClick={takeArchiveNotes} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -200,7 +210,7 @@ export default function SideDrawer(props) {
                 <ListItemText primary={'Archive'} sx={{ opacity: props.sideView ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-            <ListItem  disablePadding sx={{ display: 'block' }}>
+            <ListItem onClick={takeTrashNotes} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
