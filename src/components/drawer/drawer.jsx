@@ -24,6 +24,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import './drawer.css'
+import { connect } from 'react-redux/es/exports';
 
 const drawerWidth = 240;
 
@@ -92,7 +93,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function SideDrawer(props) {
+function SideDrawer(props) {
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(props.sideView);
@@ -111,14 +112,17 @@ export default function SideDrawer(props) {
 
   const takeArchiveNotes = () =>{
     props.listenToDrawer('Archive')
+    props.dispatch({type : "SET_Title_as_Archive"})
   }
 
   const takeTrashNotes = () =>{
     props.listenToDrawer('Trash')
+    props.dispatch({type : "SET_Title_as_Trash"})
   }
 
   const takeAllNotes = () =>{
     props.listenToDrawer('Notes')
+    props.dispatch({type : "SET_Title_as_Notes"})
   }
 
   return (
@@ -237,3 +241,5 @@ export default function SideDrawer(props) {
     // </Box>
   );
 }
+
+export default connect() (SideDrawer);

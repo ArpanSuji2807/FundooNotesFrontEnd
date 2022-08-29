@@ -9,6 +9,7 @@ import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { connect } from "react-redux";
 
 const Header = (props) => {
     return (
@@ -19,7 +20,7 @@ const Header = (props) => {
                     <MenuOutlinedIcon onClick ={props.listenToHeaderMenu} className="menu" />
                     </IconButton>
                     <img src={Keep} alt="keep logo" className="keep" />
-                    <h2>Fundoo</h2>
+                    <h2>{props.title}</h2>
                 </div>
                 <div className="header2"> 
                 <IconButton id='Searchbar' aria-label="search" size="large">
@@ -54,4 +55,12 @@ const Header = (props) => {
         </div>
     )
 }
-export default Header;
+
+const mapStateToProps = (state) => {
+    console.log(state)
+	return {
+		title: state.ReducerDrawer.title,
+	};
+};
+
+export default connect(mapStateToProps) (Header);
